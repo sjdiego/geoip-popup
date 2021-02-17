@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Geolocation IP Popup",
+  "description": "Shows a popup displaying information about a hovered IP",
+  "version": "0.1",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "run_at": "document_idle",
+      "matches": ["https://*/*"],
+      "js": [
+        "popper.min.js",
+        "tippy-bundle.umd.min.js",
+        "content.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  }
+}
